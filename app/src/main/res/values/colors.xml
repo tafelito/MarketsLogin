@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Primary Colors -->
+	<color name="dark_gray">#231F20</color>
+    <color name="medium_gray">#4C4C4C</color>
+    <color name="light_gray">#989898</color>
+    <color name="rule_gray">#E6E6E6</color>
+    <color name="dark_blue">#22313F</color>
+    <color name="medium_blue">#3498DB</color>
+    <color name="off_white">#DEDEDE</color>
+    
+    <!-- Accent Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="purple">#8F45AE</color>
+    <color name="green">#00B268</color>
+    <color name="orange">#DF8000</color>
+    <color name="red">#E8301A</color>
+    <color name="light_yellow">#FEFAF0</color>
+    
+    <!-- Other Colors -->
+    <color name="medium_blue_alpha">#333498DB</color>
+    <color name="dark_blue_alpha">#4D22313F</color>
+    <color name="dark_gray_alpha">#EE231F20</color>
+    <color name="white_alpha">#EEFFFFFF</color>
+    <color name="white_alpha_50">#7FFFFFFF</color>
+    <color name="rule_gray_alpha">#4DE6E6E6</color>
+    <color name="green_alpha">#4D00B268</color>
+    <color name="orange_alpha">#4DDF8000</color>
+    <color name="red_alpha">#4DE8301A</color>
+    <color name="black_alpha">#D8000000</color>
+    
+    <!-- Charts -->
+    <color name="comparison_color">#2babcc</color>
+    
+    
+    <!-- Typographic Colors -->
+    <color name="typo_Black">#000000</color>
+    <color name="typo_gray">#333333</color>
+    <color name="typo_light_gray">#999999</color>
+    <color name="typo_white">#ffffff</color>
+    <color name="typo_link_blue">#3585ca</color>
+    <color name="typo_blue">#00477c</color>
+    <color name="text_color_button_card_table_view">#27AAE1</color>
+    <!-- Background Colors -->
+    <color name="back_off_black">#161616</color>
+    <color name="back_dark_gray">#202020</color>
+    <color name="back_gray">#333333</color>
+    <color name="back_gray_alpha">#EE333333</color>
+    <color name="back_white_alpha">#EEFFFFFF</color>
+    <color name="back_progress_alpha">#99000000</color>
+    <color name="back_progress_internal_alpha">#BBFFFFFF</color>
+    <color name="back_light_gray">#f1f1f1</color>
+    
+    <color name="back_white">#ffffff</color>
+    <color name="stripbarcolor">@color/back_gray</color>
+    <color name="stripbartextcolor">@color/typo_white</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+
+    <color name="grid_color">#3A4F69</color>
+
+    <!-- Feeds -->
+    <color name="swipe_color_1">#94EAFE</color>
+    <color name="swipe_color_2">#3585ca</color>
+    <color name="swipe_color_3">#4585F4</color>
+    <color name="swipe_color_4">#00477c</color>
+    <color name="new_content">#00AAE4</color>
+
+    <!-- Emerging Markets -->
+    <color name="offline_content">#ff0000</color>
+
+    <!-- TableFixHeaders -->
+    <color name="shadow_start">#80000000</color>
+    <color name="shadow_end">#00000000</color>
+    <color name="header_normali">#ffe74c3c</color>
+    <color name="header_normal">#000000</color>
+    <color name="header_pressedi">#ffc0392b</color>
+    <color name="header_pressed">#999999</color>
+    <color name="menu_section_header">#FF666666</color>
+    
+</resources>

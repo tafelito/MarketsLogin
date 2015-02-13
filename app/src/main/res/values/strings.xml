@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Application -->
+    <string name="app_name">Markets</string>
+    <string name="j_p_morgan_markets_txt">J.P. Morgan Markets</string>
+    <string name="offline_message">Offline: Last Updated</string>
+    <string name="online_message">Connection Established</string>
+    <string name="wrong_pdf_licence_message">Wrong PDF library license.</string>
+
+    <!-- Login Activity -->
+    <string name="login_app_name_txt">Markets</string>
+    <string name="login_user_name_txt">Username</string>
+    <string name="login_password_txt">Password</string>
+    <string name="login_privacy_txt">Privacy Policy</string>
+    <string name="login_help_txt">NEED HELP?</string>
+    <string name="login_log_in_txt">LOG IN</string>
+    <string name="authenticating">Authenticating…be right back</string>
+
+    <!-- My Feeds -->
+    <string name="alert">ALERT</string>
+    <string name="divider">|</string>
+    <string name="empty_text">No Data</string>
+    <string name="retrieving_data">Loading…don\'t go anywhere</string>
+    <string name="building_feed_text">Building your feed…</string>
+    <string name="view_pdf">View Full Document</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="analysts">Analysts</string>
+    <string name="related">Related</string>
+    <string name="new_stories">\u00A0New Articles.</string>
+    <string name="edit_feed">Edit Feed</string>
+    <string name="edit_research_feed">Edit your research feed</string>
+    <string name="edit_research_feed_subtitle_txt">Your feed can contain as many topics as you want to follow. You can always make edits later.</string>
+    <string name="edit_feed_msg">Are you sure you want leave without saving your changes?</string>
+    <string name="remove_title_briefcase">Remove Feed</string>
+    <string name="removed_from_briefcase_message">Feed removed from Briefcase</string>
+    <string name="added_to_briefcase_message">Feed added to Briefcase</string>
+    <string name="customize_feed">Customize your feed based on your interests</string>
+    <string name="empty_body_header">No Summary Available</string>
+    <string name="empty_body_detail">Please tap on View Full Document below</string>
+    <string name="briefcase_items_add">Items added to Briefcase</string>
+
+    <!-- PDF Viewer -->
+    <string name="action_settings">Settings</string>
+    <string name="progres_dialog_text">Downloading PDF…</string>
+
+    <!-- Menues -->
+    <string name="menu_edit">Edit</string>
+    <string name="menu_done">Done</string>
+    <string name="menu_clear">Clear</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_filter">Filter</string>
+    <string name="menu_briefcase">Add To Breficase</string>
+    <string name="menu_empty_briefcase">Empty Briefcase</string>
+    <string name="menu_jumpto">JUMP TO …</string>
+    <string name="rest_test">Test Rest Request Feature</string>
+    <string name="menu_theme">Theme</string>
+    <string name="menu_add_watchlist">+WATCHLIST</string>
+    <string name="menu_clear_all">Clear All</string>
+    <string name="menu_remove">Remove</string>
+
+    <!-- Share by email -->
+    <string name="share_email_subjet">J.P. Morgan: %s</string>
+    <string name="share_email_multiple_items_subjet">J.P. Morgan: %s research items have been shared with you</string>
+    <string name="share_email_header" formatted="false">
+<![CDATA[<body style="text-align:justify;">
+        <p>From J.P. Morgan Markets:</p><b>%s</b></p>]]>
+    </string>
+    <string name="share_email_body" formatted="false">
+<![CDATA[<body style="text-align:justify;">
+        <b>%s</b></p><p>Published: %s</p><p>%s</p>]]>
+    </string>
+    <string name="share_email_body_with_document" formatted="false">
+<![CDATA[<body style="text-align:justify;">
+        <b>%s</b></p><p>Published: %s</p><p><a href=\"%s\"> Research DOC URL </a></p><p>%s</p>]]>
+    </string>
+    <string name="share_email_footer" formatted="false">
+<![CDATA[ 
+       <p>Sent from the J.P. Morgan Markets Android application.</p><p>Get access to JP Morgan Markets on the go by downloading the free app for Android (<a href=\"https://play.google.com/store\">Google Play</a>) or iPhone (<a href=\"http://store.apple.com/us\">Apple Store</a>).</p>]]>
+    </string>
+
+    <!-- Hamburguer Menu Feeds -->
+    <string name="analytics_text">Analytics</string>
+    <string name="display_settings_text">Display Settings</string>
+    <string name="search_text">Search</string>
+    <string name="research_text">Research</string>
+    <string name="following">My Feed</string>
+    <string name="featured_text">Featured</string>
+    <string name="commentary_text">Commentary</string>
+    <string name="recentlyread_text">Recently Read</string>
+    <string name="marketmonitor_text">Markets Monitors</string>
+    <string name="monitor_text">Monitor</string>
+    <string name="insigths">Insights</string>
+    <string name="reference_text">Reference</string>
+    <string name="briefcase_text">Briefcase</string>
+    <string name="calendar">Calendar</string>
+    <string name="my_watchlist">My Watchlist</string>
+    <string name="indexes_text">Indexes</string>
+    <string name="settings_text">Settings</string>
+    <string name="drawer_open">Open drawer</string>
+    <string name="drawer_close">Close drawer</string>
+    <string name="display_notifications">Notifications</string>
+    <string name="fx_txt">FX App</string>
+    <string name="prime_brokerage_txt">Prime Brokerage App</string>
+
+    <!-- Hamburguer Menu Feeds -->
+    <string name="logout_txt">Log Out</string>
+    <string name="on_txt">On</string>
+    <string name="off_txt">Off</string>
+    <string name="info_txt">INFO</string>
+    <string name="help_feedback">Help &amp; Feedback</string>
+    <string name="help_feedback_selection">Help &amp; Feedback</string>
+
+    <!-- Help & Feedback -->
+    <string name="help_txt">Help</string>
+    <string name="about_txt">About</string>
+    <string name="terms_of_use_txt">Terms of Use</string>
+    <string name="feedback_txt">Feedback</string>
+    <string name="disclaimers_txt">Disclaimers</string>
+    <string name="privacy_policy_txt">Privacy Policy</string>
+    <string name="cookie_policy_txt">Cookie Policy</string>
+    <string name="change_pass_txt">Change Password</string>
+    <string name="privacy_dialog_txt">The Privacy Policy will open in Browser</string>
+    <string name="about_html_txt"><![CDATA[<h3><b>J.P. Morgan Markets</b></h3>Find Your Edge. Trade with Intelligence<br/>Version: %s<br/><br/><b>Research</b><br/>J.P. Morgan Markets is an industry leader in global research, with more than 900 economists, analysts, strategists and research professionals generating research content spanning six continents, and corporate research covering more than 4,200 companies in the world<br/>\'92s developed and emerging markets countries across all industry groups.<br/><br/><b>Market Monitors</b><br/>Get access to interactive, real-time updates across the instruments you utilize the most, including J.P. Morgan proprietary indices. Retrieve, chart and analyze market data across assets and geographies.<br/><br/>J.P. Morgan clients may contact J.P. Morgan Markets Client Services to request access, technical support or to learn more]]></string>
+    <string name="disclaimers_html_txt"><![CDATA[<b>Securitized Products</b><br/><br/>Disclaimer<br/>Prices and availability are indicative only and are subject to change without notice. This is for information only, not an offer or solicitation for the purchase or sale of any financial instrument, nor an official confirmation of terms. The information is believed to be reliable, but we do not warrant its completeness or accuracy. We may hold a position or act as a market maker in any financial instrument discussed herein. Clients should consult their own advisors regarding any tax, accounting or legal aspects of this information and execute transactions through a J.P. Morgan entity in their home jurisdiction unless governing law permits otherwise.<br/><br/><br/>Global Research<br/><br/>Disclaimer<br/>Important disclosures, including price charts, are available for all J.P. Morgan-covered companies by visiting <a href=\"https://jpmm.com/research/disclosures\">https://jpmm.com/research/disclosures</a>, calling <a href=\"+18004770406\">1-800-477-0406</a>, or e-mailing <a href=\"mailto:research.disclosure.inquiries@jpmorgan.com\">research.disclosure.inquiries@jpmorgan.com</a> with your request. For important disclosure for these companies, please call <a href=\"tel:+18004770406\">1-800-477-0406</a> or e-mail <a href=\"mailto:research.disclosure.inquiries@jpmorgan.com\">research.disclosure.inquiries@jpmorgan.com</a>]]></string>
+    <string name="cookie_policy_html_txt"><![CDATA[IMPORTANT NOTICE: PLEASE READ CAREFULLY BEFORE USING THIS WEBSITE:<br/><br/>J.P. Morgan Markets and our mobile optimized version of this site known as J.P. Morgan Markets Mobile uses cookies to store information on your computer. This policy explains how we use cookies and may be amended, from time to time, without notice. To ensure that you are using this site with full and up-to-date information of how we use cookies please review this policy regularly as any amended policy will be updated on the site. By using this site you agree to the placement of cookies on your computer in accordance with the terms of this policy. If you do not wish to accept cookies from this site please either disable cookies or refrain from using this site.<br/><br/>1. What are Cookies?<br/>A cookie is a text-only string of information that a website transfers to the cookie file of the browser on your computer\'s hard disk so that the website can recognise you when you revisit and remember certain information about you. This can include which pages you have visited, choices you have made from menus, any specific information you have entered into forms and the time and date of your visit.<br/><br/>2. Types of Cookies<br/>There are two main types of cookies:<br/>&emsp;&emsp;&emsp;&emsp;&emsp;Session cookies: these are temporary cookies that expire at the end of a browser session; that is, when you leave the site. Session cookies allow the website to recognise you as you navigate between pages during a single browser session and allow you to use the website most efficiently. For example, session cookies enable a website to remember that a user has placed items in an online shopping basket.<br/>&emsp;&emsp;&emsp;&emsp;&emsp;Persistent cookies: in contrast to session cookies, persistent cookies are stored on your equipment between browsing sessions until expiry or deletion. They therefore enable the website to \\\"recognise\\\" you on your return, remember your preferences and tailor services to you.<br/><br/>3. Our use of Cookies<br/>We use session cookies on J.P. Morgan Markets and J.P. Morgan Markets Mobile to:<br/>&emsp;&emsp;&emsp;&emsp;&emsp;Help us maintain security and verify your details whilst you use the website as you navigate from page to page, which enables you to avoid having to re-enter your details each time you enter a new page.<br/><br/>4. Refusing Cookies<br/>Most browsers are initially set to accept cookies. However, you have the ability to disable cookies if you wish, generally through changing your internet software browsing settings. It may also be possible to configure your browser settings to enable acceptance of specific cookies or to notify you each time a new cookie is about to be stored on your computer enabling you to decide whether to accept or reject the cookie. To manage your use of cookies there are various resources available to you, for example the “Help” section on your browser may assist you. You can also disable or delete the stored data used by technology similar to cookies, such as Local Shared Objects or Flash cookies, by managing your browser’s “add-on settings” or visiting the website of its manufacturer. As our cookies allow you to access some of our website’s essential features we recommend that you leave cookies enabled, otherwise, if cookies are disabled, it may mean that you experience reduced functionality or will be prevented from using this site altogether.]]></string>
+    <string name="cookie_policy_url">https://www.jpmorgan.com/pages/privacy</string>
+    <!-- Country Phones -->
+    <string name="phone_country_0">US &amp; Canada (Toll Free)</string>
+    <string name="phone_number_0">+1 800 477 0406</string>
+    <string name="phone_country_1">Hong Kong</string>
+    <string name="phone_number_1">+852 2800 1539</string>
+    <string name="phone_country_2">London</string>
+    <string name="phone_number_2">+44 207 777 5577</string>
+    <string name="phone_country_3">Singapore</string>
+    <string name="phone_number_3">+65 6882 1539</string>
+    <string name="phone_country_4">Sydney</string>
+    <string name="phone_number_4">+1800 189 810</string>
+    <string name="phone_country_5">Tokyo</string>
+    <string name="phone_number_5">+813 6736 1539</string>
+
+    <!-- Settings -->
+    <string name="display_txt">Display</string>
+    <string name="dark_theme_txt">Dark Theme</string>
+    <string name="text_size_txt">Text Size</string>
+    <string name="reasearch_text">Research</string>
+    <string name="research_summaries_txt">Display Summaries</string>
+    <string name="alerts_txt">Display Alerts</string>
+    <string name="non_english_txt">Include Non-English Research</string>
+    <string name="notifications_txt">Notifications</string>
+    <string name="supress_notifications_txt">Suppress Notifications</string>
+    <string name="my_feed_txt">My Feed</string>
+    <string name="activate_automatic_polling">Auto Refresh Feed</string>
+    <string name="polling_notification_title">Markets</string>
+    <string name="polling_concluded_successfully">Your J.P.Morgan Research Feed is ready to read. Tap to open the J.P.Morgan Markets App</string>
+    <string name="set_automatic_polling_time">Every Weekday at</string>
+    <string name="polling_notify_txt">Notify Me After Refresh</string>
+
+    <!-- exceptions -->
+    <string name="uncaught_exception_txt">Oops! Something went wrong! Working on it!</string>
+    <string name="my_alerts">My Alerts</string>
+    <string name="my_alerts_info">By Turning on this option, your research alerts from JPMM.com will be included in your mobile feed</string>
+    <string name="connection_error">Connection error please try again in a moment</string>
+    <string name="server_error">Server not available please try again later</string>
+    <string name="login_error">Username and/or Password is incorrect.</string>
+    <string name="login_error_empty_user">The user name field  is empty, try again!</string>
+    <string name="login_error_empty_pass">The password field  is empty, try again!</string>
+
+    <!-- Feed Wizard -->
+    <string name="feed_settings_title_txt">Customize your research feed</string>
+    <string name="feed_settings_subtitle_txt">Your feed can contain as many topics as you want to follow. You can always make edits later.</string>
+    <string name="go_to_my_feed_btn_active">GO TO MY FEED</string>
+    <string name="go_to_my_feed_btn_inactive">SKIP CUSTOMIZATION</string>
+    <string name="return_to_my_feed_btn_active">SAVE AND REBUILD FEED</string>
+    <string name="return_to_my_feed_btn_inactive">RETURN TO MY FEED</string>
+    <string name="feed_setup_title_txt">Let\'s start building your research feed</string>
+    <string name="feed_setup_subtitle_txt">Your feed can contain as many topics as you want to follow</string>
+    <string name="feed_setup_continue_btn">CONTINUE</string>
+    <string name="import_web_alert_title_text">You currently have alerts set up on jpmm.com</string>
+    <string name="import_web_alert_subtitle_txt">Import your alerts now and toggle them on or off at any time.</string>
+    <string name="import_my_alerts_btn_txt">IMPORT MY ALERTS</string>
+    <string name="skip_import_btn_txt">SKIP IMPORT</string>
+    <string name="alerts_title">Alerts</string>
+    <string name="alerts_on">On</string>
+    <string name="alerts_off">Off</string>
+    <string name="import_alerts_title">Import Alerts</string>
+    <string name="import_alerts_body">This toggle controls wheter or not the alerts you have set up on the J.P. Morgan Markets website are imported and included in your feed. You can change this at anytime.</string>
+    <string name="loading_feed_info">Loading feed settings. Please Wait</string>
+    <string name="loaded_market_monitor_configuration">Loaded Market Monitor Configuration</string>
+    <string name="loaded_feed_settings">Loaded Feed Settings</string>
+
+    <!-- Onboarding Tutorial -->
+    <string name="onboarding_welcome_title">Hello</string>
+    <string name="onboarding_welcome_message">Welcome to your feed. Research based on your interest will show up here.</string>
+    <string name="onboarding_find_filter_title">Find &amp; Filter</string>
+    <string name="onboarding_find_filter_message">Find and filter within your feed by tapping on this button.</string>
+    <string name="onboarding_edit_feed_title">Edit Feed</string>
+    <string name="onboarding_edit_feed_message">You can edit your feed sources from this menu at any time.</string>
+    <string name="onboarding_menu_title">Menu</string>
+    <string name="onboarding_menu_message">Tap here to access Markets, Briefcase, Calendar and more.</string>
+    <string name="onboarding_continue">CONTINUE</string>
+    <string name="onboarding_skip">SKIP TUTORIAL</string>
+    <string name="onboarding_done">DONE</string>
+    <string name="onboarding_back">BACK</string>
+    <string name="onboarding_next">NEXT</string>
+
+    <!-- Search Related -->
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search</string>
+    <string name="settings_description">Uses for searches</string>
+    <string name="search_header_tab_one">Research</string>
+    <string name="search_header_tab_two">Quotes</string>
+    <string name="search_no_result">No results found</string>
+    <string name="index_column">INDEX</string>
+    <string name="level_coloumn">Level</string>
+    <string name="change_column">Chg</string>
+
+    <!-- Analyst Detail Related -->
+    <string name="info">Bio &amp; Contact</string>
+    <string name="coverage">Coverage</string>
+    <string name="add_to_feed">+ FEED</string>
+    <string name="remove_feed">- FEED</string>
+    <string name="call_fail">Your call has failed…</string>
+    <string name="add_to_watchlist">+ WATCHLIST</string>
+    <string name="remove_watchlist">- WATCHLIST</string>
+    <string name="contact_info_header">Contact</string>
+    <string name="biography_header">Biography</string>
+    <string name="analyst_coverage">Analyst coverage</string>
+
+    <!-- CardView Row -->
+    <string name="card_view_row_title_01">BID</string>
+    <string name="card_view_row_title_02">ASK</string>
+    <string name="card_view_row_title_03">CHG</string>
+    <string name="card_view_row_title_04">SSP</string>
+    <string name="card_view_row_title_05">CHG</string>
+    <string name="card_view_row_title_06">PECS</string>
+    <string name="card_view_row_title_07">CHG</string>
+    <string name="card_view_row_title_08">ZSPD</string>
+    <string name="card_view_row_title_09">YTM</string>
+    <string name="card_view_row_title_10">ACCR</string>
+    <string name="card_view_row_price">99.00</string>
+    <string name="cards_view">Card Views</string>
+    <string name="button_card_view">Card View</string>
+    <string name="button_table_view">Table View</string>
+    <string name="asset_classes_title">Asset Classes</string>
+    <string name="asset_name_title">Asset Name</string>
+    <string name="clear_all">Clear All</string>
+    <string name="select_region_title">SELECT REGION(S)</string>
+    <string name="analysts_title">Analysts</string>
+    <string name="companies_title">Companies</string>
+    <string name="analyst_added">Analyst added</string>
+    <string name="analyst_removed">Analyst removed</string>
+    <string name="configuration_saved">Configuration saved!</string>
+    <string name="toast_removed_from_your_feed">was removed from your feeds</string>
+    <string name="toast_added_from_your_feed">was added to your feeds</string>
+
+    <!-- Metrics Event -->
+    <string name="event_app_launch">ApplicationLaunch</string>
+    <string name="event_app_close">ApplicationClose</string>
+    <string name="event_failed_login">FailedLogin</string>
+    <string name="event_user_login">UserLogin</string>
+    <string name="event_user_logout">UserLogout</string>
+    <string name="event_page_load">PageLoad</string>
+    <string name="event_user_online">UserOnLine</string>
+    <string name="event_user_offline">UserOffline</string>
+    <string name="event_background_application">BackgroundApplication</string>
+    <string name="event_foreground_application">ForegroundApplication</string>
+    <string name="event_notification_open">NotificationOpen</string>
+    <string name="event_custom">custom</string>
+
+    <!-- Mobile Addendum -->
+    <string name="DECLINE_str">DECLINE</string>
+    <string name="addendum_text">
+<![CDATA[
+        <body><h2>J.P. Morgan Markets Mobile Addendum</h2><h3>TO THE ELECTRONIC ACCESS AGREEMENT</h3><p>J.P. Morgan Markets Mobile Addendum dated August 29, 2014</p><p>This J.P. Morgan Markets Mobile Addendum (“Addendum”) to the Electronic Access Agreement (the “Access Agreement”) is issued pursuant to and deemed to be a part of the Access Agreement between you and us with the terms and conditions of the Access Agreement incorporated by reference, and any violation or breach of this Addendum shall be deemed a violation or breach of the Access Agreement as well.  Capitalized terms and other terms not otherwise defined herein and defined in the Access Agreement shall possess the meanings ascribed in the Access Agreement.</p><p>BEFORE INSTALLING/ACCESSING J.P. MORGAN MARKETS MOBILE (“JPMM Mobile”), WHICH GRANTS YOU ACCESS TO AND USE OF SELECTED J.P. MORGAN MARKETS CROSS-ASSET CONTENT AND CAPABILITIES VIA SUPPORTED MOBILE DEVICES, PLEASE READ THIS ADDENDUM WHICH GOVERNS ACCESS TO, AND USE OF, JPMM MOBILE AND CONTAINS IMPORTANT INFORMATION ABOUT YOUR LEGAL RIGHTS AND LIABILITIES.</p><p>You acknowledge and agree that a) your access to and use of JPMM Mobile by means of your approved mobile device will be in accordance with the Access Agreement and any addendum or addenda that you have agreed to on the J.P. Morgan Markets portal or your firm has executed and b) the J.P Morgan legal entity that provides you with the applicable Service on JPMM Mobile shall be deemed to be the same legal entity that provides you with that same Service through the J.P. Morgan Markets portal.</p><p>PLEASE EVIDENCE (i) YOUR AGREEMENT TO THIS ADDENDUM ON BEHALF OF YOURSELF AND THE CLIENT BY CLICKING ON THE BUTTON BELOW MARKED “ACCEPT” OR (ii) THAT YOU DO NOT AGREE TO THIS ADDENDUM BY CLICKING ON THE BUTTON BELOW MARKED “NOT ACCEPT”.  BY CLICKING ON THE BUTTON BELOW MARKED “ACCEPT” YOU (A) ACKNOWLEDGE AND AGREE ON BEHALF OF YOURSELF AND THE CLIENT THAT YOU AND THE CLIENT AGREE AND INTEND FOR THIS ADDENDUM TO BE THE LEGAL EQUIVALENT OF SIGNED, WRITTEN CONTRACTS AND EQUALLY BINDING, AND (B) WARRANT AND REPRESENT THAT YOU HAVE ALL REQUISITE LEGAL AND CORPORATE POWER TO ENTER INTO THIS ADDENDUM ON BEHALF OF THE CLIENT. ANY SUCH CLICKING SHALL HAVE THE SAME FORCE AND EFFECT AS A PAPER COPY OF AN ADDENDUM THAT HAS BEEN MANUALLY SIGNED AND DELIVERED BY YOU ON YOUR BEHALF AND AS AN AUTHORIZED SIGNATORY OF THE CLIENT.</p><p>The parties agree that:<br>(a)	This contract will be formed by your clicking the “Accept” button.</br><br>(b)	The time of formation of the contract will be the time at which the J.P. Morgan IT system receives the record of your clicking the “Accept” button.</br><br>(c)	The place of formation of the contract will be deemed to be the same place as the formation of the contract/s that you accepted through the J.P. Morgan Markets portal.</br></p><p>J.P. Morgan Markets Website design and content Copyright © 2014 JPMorgan Chase &amp; Co.  All rights reserved worldwide.</p></body>
+        ]]>
+    </string>
+
+    <!-- CardView Row -->
+    <string name="agreements_chk_msg_str">I accept the agreements</string>
+    <string name="title_activity_market_monitor">MarketMonitorActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_analyst_detail">AnalystDetailActivity</string>
+    <string name="title_activity_briefcase">BriefcaseActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_initial_feed_setup">InitialFeedSetupActivity</string>
+    <string name="asset_classes">Asset Classes</string>
+
+    <!-- Feed Setup -->
+    <string name="all_analysts_title">All Analysts</string>
+    <string name="all_companies_title">All Companies</string>
+    <string name="all_regions_title">All Regions</string>
+    <string name="selected_title">Selected</string>
+    <string name="search_back">Back</string>
+    <string name="selected_analyst">VIEW SELECTED ANALYSTS</string>
+    <string name="selected_analyst_title">Selected Analysts</string>
+    <string name="selected_companies">VIEW SELECTED COMPANIES</string>
+    <string name="selected_companies_title">Selected Companies</string>
+    <string name="selected_assets">VIEW SELECTED ASSETS</string>
+    <string name="selected_assets_title">Selected Assets</string>
+    <string name="view_all">View All</string>
+    <string name="sectors_title">Sectors</string>
+    <string name="all_sectors_title">All Sectors</string>
+    <string name="empty_feed_setup_body">Your preferences could not be loaded because there is no internet connection. As soon as connection is restored data will be retrieved.</string>
+    <string name="unable_to_connect_body">Please check your connection and retry.</string>
+
+    <!-- Buttons Style Dialogs -->
+    <string name="button_light">Light</string>
+    <string name="button_dark">Dark</string>
+    <string name="button_OK">OK</string>
+    <string name="button_ACCEPT">ACCEPT</string>
+    <string name="button_UPDATE">Update</string>
+    <string name="button_NOT_NOW">Not now</string>
+    <string name="button_CANCEL">CANCEL</string>
+    <string name="button_OPEN">OPEN</string>
+    <string name="custom_dialog_title">Display Settings</string>
+    <string name="search_hint_text">What are you looking for?</string>
+
+    <!-- Notifications -->
+    <string name="empty_notifications_title">You don’t have any notifications</string>
+    <string name="empty_notifications_body">Your notifications and alerts can be viewed and managed here.</string>
+
+    <!-- Briefcase -->
+    <string name="empty_briefcase_title">Your briefcase is currently empty</string>
+    <string name="empty_briefcase_body_explanation_text">Items you put in your briefcase are downloaded and made available for offline viewing.</string>
+    <string name="empty_briefcase_body_remember_text">Remember that you can add items to your briefcase wherever you see the %1$s icon.</string>
+    <string name="empty_briefcase_pop_up">Your briefcase will be empty</string>
+
+    <!-- Annotations -->
+    <string name="annotation_hint">Add a comment</string>
+    <string name="annotation_title">My annotation</string>
+    <string name="button_REMOVE">REMOVE</string>
+    <string name="button_DONE">DONE</string>
+    <string name="button_filter">Filter</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="title_activity_watch_list">My Watchlist</string>
+    <string name="title_activity_calendar">Calendar</string>
+    <string name="filter_by">Filter By</string>
+    <string name="find_in_page">Find in My Feed</string>
+    <string name="reset">RESET</string>
+    <string name="filter_colon">Filter:</string>
+
+    <!-- Update dialog -->
+
+    <string name="update_dialog_title">Update Available</string>
+    <string name="update_dialog_message">A new version of J.P.Morgan Markets is available. Please update to version %1$s now.</string>
+
+    <!-- Type of Markets -->
+    <string name="market_emerging_markets">Emerging Markets</string>
+    <string name="market_rates">Rates</string>
+    <string name="market_credit">Credit</string>
+    <string name="market_h_credit">H Credit</string>
+    <string name="market_securitized">Securitized Products</string>
+    <string name="View">View</string>
+
+    <!-- Asset Details -->
+    <string name="asset_detail_overview_title">Overview</string>
+    <string name="asset_detail_reference_title">Reference</string>
+    <string name="asset_detail_research_title">Research</string>
+    <string name="asset_detail_analyst_title">Analyst</string>
+    <string name="asset_detail_bid_ask_title">Bid/Ask</string>
+    <string name="asset_detail_chg_title">Chg</string>
+    <string name="asset_detail_ssp_change_title">SSP/CHANGE</string>
+    <string name="asset_detail_pecs_change_title">PECS/CHANGE</string>
+    <string name="asset_detail_zspd_title">ZSPD</string>
+    <string name="asset_detail_ytm_title">YTM</string>
+    <string name="title_activity_chart_full_screen_detail">ChartFullScreenDetailActivity</string>
+    <string name="title_activity_fullscreen_detail_chart">FullscreenDetailChartActivity</string>
+
+    <!-- Company Details -->
+    <string name="company_detail_equity_title">Equity</string>
+    <string name="company_detail_earnings_title">Earnings</string>
+    <string name="company_detail_profile_title">Profile</string>
+    <string name="company_detail_credit_title">Credit</string>
+    <string name="company_detail_ricticker_title">RIC TICKER</string>
+    <string name="company_detail_target_title">TARGET</string>
+    <string name="company_detail_equity_rating_title">EQUITY RATING</string>
+    <string name="company_detail_value_close_title">CLOSE</string>
+    <string name="company_detail_equity_change_research_subtitle">Latest Research</string>
+    <string name="company_detail_earnings_estimates_subtitle">Earnings Estimates</string>
+    <string name="company_detail_estimate_change_research_subtitle">Estimate Change Research</string>
+    <string name="company_detail_credit_profile_subtitle">Credit Profile</string>
+    <string name="company_detail_credit_research_subtitle">Credit Research</string>
+    <string name="empty_values">--</string>
+    <string name="company_reasearch">Company research</string>
+
+    <!-- Market Monitor detail -->
+    <string name="header_summary_list">Summary</string>
+    <string name="header_reference_list">Reference</string>
+    <string name="unable_to_connect">Unable to Connect</string>
+    <string name="retry_connection">RETRY CONNECTION</string>
+    <string name="connection_lost">Connection Lost</string>
+    <string name="currently_empty"> is currently empty</string>
+    <string name="market_monitor_unable_to_connect_body">Could not connect to the specified market monitor, please check your connection and retry.</string>
+    <string name="general_unable_to_connect_body">Could not connect to the specified resource, please check your connection and retry.</string>
+    <string name="general_empty_view_body">Current element is empty, please add elements.</string>
+    <string name="connection_lost_retry_body">We lost internet connection, as soon as we have it, we will automatically connect.</string>
+    <string name="retrying_fetch_data">Retrying to fetch market data</string>
+
+    <!-- Calendar -->
+    <string name="calendar_event_sunday_title">SUN</string>
+    <string name="calendar_event_monday_title">MON</string>
+    <string name="calendar_event_tuesday_title">TUE</string>
+    <string name="calendar_event_wednesday_title">WED</string>
+    <string name="calendar_event_thursday_title">THU</string>
+    <string name="calendar_event_friday_title">FRI</string>
+    <string name="calendar_event_saturday_title">SAT</string>
+    <string name="today">Today</string>
+    <string name="today_caps">TODAY</string>
+    <string name="related_research">RELATED RESEARCH</string>
+    <string name="add_to_calendar_confirm">This action will take you to the calendar app. Would you like to continue?</string>
+    <string name="about_to_start_1">IN</string>
+    <string name="about_to_start_2">MINS</string>
+    <string name="now">NOW</string>
+    <string name="empty_calendar_body">Calendar could not be loaded because there is no internet connection. As soon as connection is restored calendar info will be retrieved.</string>
+
+    <!-- SPG Market Monitor detail -->
+    <string name="second_box_first">NOV</string>
+    <string name="second_box_second">VUST CRV</string>
+    <string name="Third_box_first">VSWP CRV</string>
+    <string name="Third_box_second">HR(DESK)</string>
+    <string name="header_us_treasuries_list">US Treasuries</string>
+    <string name="us_first_row">UST</string>
+    <string name="us_second_row">Price</string>
+    <string name="us_third_row">Price Chg</string>
+    <string name="us_four_row">Yield</string>
+
+    <!-- Global Search -->
+    <string name="search_loading_message">Searching, please wait…</string>
+    <string name="research_tab_title">Research</string>
+    <string name="quotes_tab_title">Quotes</string>
+    <string name="people_tab_title">People</string>
+    <string name="company_tab_title">Company</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="group">Search</string>
+
+    <!-- Default empty section -->
+    <string name="default_empty_section">This section</string>
+    <string name="letter_A">A</string>
+    <string name="pdf_overlay_title">Rotate to view in landscape mode</string>
+    <string name="pdf_overlay_message">While viewing a PDF, you can always rotate your device to landscape mode for easier reading.</string>
+    <string name="pdf_overlay_action">OK, GOT IT!</string>
+    <string name="alert_category">JPMM.COM</string>
+    <string name="feedback_subject">Markets Android %1$s</string>
+    <string name="feedback_email">jpmm_feedback@jpmorgan.com</string>
+    <string name="feedback_device_info">Device information:\n\nDevice: %1$s\nModel (and Product): %2$s (%3$s)\nOS Version: %4$s (%5$s)\nAPI Level: %6$s\nApplication version: %7$s\nConnection: %8$s\nDevice time: %9$s\nTotal disk space: %10$s\nFree disk space: %11$s\n</string>
+
+    <!-- Calendar filter -->
+    <string name="regions_title">Regions</string>
+    <string name="categories_title">Categories</string>
+    <string name="title_activity_test_toolbar">TestToolbar</string>
+
+</resources>

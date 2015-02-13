@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:left="-2dp">
+        <shape android:shape="rectangle" >
+            <solid android:color="@android:color/transparent" />
+
+            <stroke
+                android:width="2dp"
+                android:color="@color/text_color_button_card_table_view" />
+            <corners 
+                android:topRightRadius="2dip"
+                android:bottomRightRadius="2dip"/>
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,0 +1,539 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="ActionMode" parent="@style/Widget.AppCompat.ActionMode">
+        <item name="titleTextStyle">@style/ActionMode.Title</item>
+    </style>
+
+    <style name="ActionMode.Title" parent="@style/TextAppearance.AppCompat.Widget.ActionMode.Title">
+        <item name="android:textColor">?attr/primaryColor</item>
+    </style>
+
+    <style name="InputTextStyle" parent="@style/TextAppearance.Regular.List">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">?attr/activeColor</item>
+        <item name="android:textColorHint">@color/light_gray</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="LoginInputTextStyle" parent="@style/InputTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">@dimen/text_top_bottom_padding</item>
+        <item name="android:paddingBottom">@dimen/divider_padding</item>
+    </style>
+
+    <style name="GrayHeaderTextViewStyle" parent="@style/TextAppearance.Condensed.List">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@color/medium_gray</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ItemTextViewStyle" parent="@style/TextAppearance.Regular.List">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <!-- <item name="android:background">@android:color/transparent</item> -->
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">?attr/secondaryColor</item>
+    </style>
+    
+   <style name="ItemTextViewStyle.ItemTextSwitchStyle">
+        <item name="android:textOff">@string/off_txt</item>
+        <item name="android:textOn">@string/on_txt</item>
+        <item name="android:paddingLeft">7dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+
+    <style name="ItemTextViewStyle.ItemTextSeekBarStyle">
+        <item name="android:layout_height">38dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:text">@string/letter_A</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ItemTextMarket" parent="@style/TextAppearance.Regular">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+      	<item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:background">?attr/primaryColor</item>
+        <item name="android:textColor">?attr/secondaryColor</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+    
+    <style name="ItemTextMarket.green">
+        <item name="android:gravity">start|center_vertical</item>
+    </style>
+    
+    <style name="ItemTextMarket.green.rigth">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+    
+    <style name="SecondaryColor">
+     	<item name="android:textColor">?attr/secondaryColor</item>
+    </style>
+    
+    <style name="ItemLineViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?attr/thirdColor</item>
+        <item name="android:layout_marginBottom">1dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">?attr/thirdColor</item>
+    </style>
+    
+    <style name="ButtonStyle" parent="@style/TextAppearance.Condensed.Bold.Display1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_height_size</item>
+        <item name="android:background">@color/medium_blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonStyle.Agreements" >
+        <item name="android:layout_width">@dimen/agreement_bottom_width</item>
+        <item name="android:layout_height">@dimen/button_height_size</item>
+        <item name="android:layout_margin">@dimen/agreement_bottom_margin</item>
+        <item name="android:layout_weight">.5</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/agreement_bottom_padding</item>
+    </style>
+    
+    <style name="ButtonStyle.ViewPDF">
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/view_pdf</item>
+    </style>
+    
+	<style name="OKCancelButtonStyle" parent="@style/TextAppearance.Condensed.Regular">
+	    <item name="android:layout_height">@dimen/button_height_size</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:background">@color/rule_gray</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <style name="OKCancelButtonLayout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:divider">@drawable/separator</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:showDividers">middle</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="@style/TextAppearance.Condensed.List"/>
+    
+    <style name="ButtonStyle.DarkBlueBackground">
+        <item name="android:background">@color/dark_blue</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ButtonStyle.ContinueTutorialButton">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+
+    <style name="ButtonStyle.DarkBlueBackground.SkipTutorialButton">
+        <item name="android:padding">0dp</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+    
+    <style name="AnalystList" parent="@style/TextAppearance.Regular.List">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/analyst_list_style</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+        <item name="android:gravity">start|center</item>
+    </style>
+    
+    <style name="CompanyCoverageList" parent="@style/TextAppearance.Regular.List">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/analyst_list_style</item>
+        <item name="android:gravity">start|center</item>
+    </style>
+    
+    <style name="SelectionListLayout" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">?attr/primaryColor</item>
+    </style>
+    
+    <style name="ListView.SelectionList" >
+        <item name="android:layout_width">@dimen/selection_list_width</item>
+        <item name="android:layout_height">@dimen/selection_list_height</item>
+    </style>
+    
+    <style name="SingleDoubleList" parent="@style/TextAppearance.Regular.List">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/single_list_item</item>
+        <item name="android:gravity">start|center</item>
+    </style>
+
+    <style name="SingleDoubleList.Item">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+        <item name="android:textColor">?attr/secondaryColor</item>
+    </style>
+
+    <style name="SingleDoubleList.SubItem">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+        <item name="android:textColor">?attr/thirdColor</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+    </style>
+    
+    <style name="SingleDoubleList.SelectedIcon">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+    </style>
+
+    <style name="SingleDoubleList.Header">
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+        <item name="android:textColor">?attr/primaryColor</item>
+        <item name="android:background">?attr/activeColor</item>
+    </style>
+    
+    <style name="ContactInfoHeader">
+        <item name="android:height">@dimen/single_list_item</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+        <item name= "android:gravity">center_vertical</item>
+        <item name="android:background">?attr/activeColor</item>
+    </style>
+    
+    <style name="SingleDoubleList.DrawerMenuItem" parent="@style/TextAppearance.Condensed.Display2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/single_list_item</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+        <item name="android:gravity">start|center</item>
+        <item name="android:textColor">?attr/secondaryColor</item>
+    </style>
+    
+    <style name="StickyHeader" parent="@style/TextAppearance.Condensed.Display2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+        <item name="android:background">?attr/thirdColor</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">start|center</item>
+    </style>
+    
+    <style name="StickyHeader.Large">
+        <item name="android:layout_height">@dimen/large_sticky_header</item>
+    </style>
+    
+    <style name="StickyHeader.Small">
+        <item name="android:layout_height">@dimen/small_sticky_header</item>
+    </style>
+    
+    <style name="StickyHeaderTextViewStyle" parent="@style/TextAppearance.Condensed.Display2">
+        <item name="android:textColor">?attr/primaryColor</item>
+    </style>
+    
+    <style name="CalendarWeekHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/double_list_item</item>
+        <item name="android:background">?attr/activeColor</item>
+    </style>
+    
+    <style name="CalendarWeekHeaderText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/calendar_week_header_text</item>
+        <item name="android:textColor">?attr/primaryColor</item>
+    </style>
+    
+    <style name="CalendarWeekHeaderText.Title">
+        <item name="android:gravity">center_horizontal|bottom</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Condensed.Labels</item>
+        <item name="android:textViewStyle">@style/TextAppearance.Condensed.Labels</item>
+    </style>
+    
+    <style name="CalendarWeekHeaderText.Subtitle">
+        <item name="android:gravity">center_horizontal|top</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Regular.List</item>
+        <item name="android:textViewStyle">@style/TextAppearance.Regular.List</item>
+    </style>
+    
+    <style name="ListView" parent="@android:style/Widget.ListView">
+        <item name="android:listSelector">@drawable/selector_activated_background</item>
+        <item name="android:divider">?attr/thirdColor</item>
+        <item name="android:dividerHeight">1px</item>
+    </style>
+
+    <style name="ListItemStyle">
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+        <item name="android:paddingTop">@dimen/list_item_padding_top_bottom</item>
+        <item name="android:paddingBottom">@dimen/list_item_padding_top_bottom</item>
+        <item name="android:background">?android:attr/activatedBackgroundIndicator</item>
+    </style>
+    
+    <style name="DataPointBackGround">
+        <item name="android:background">?android:attr/activatedBackgroundIndicator</item>
+    </style>
+
+    <style name="CategoryStyle" parent="@style/TextAppearance.Condensed.Labels">
+        <item name="android:textColor">@color/medium_blue</item>
+    </style>
+    
+    <style name="DateStyle" parent="@style/TextAppearance.Condensed.Labels">
+        <item name="android:textColor">?attr/thirdColor</item>
+    </style>
+    
+    <style name="TitleStyle" parent="@style/TextAppearance.Condensed.Bold.Title">
+        <item name="android:textColor">?attr/secondaryColor</item>
+    </style>
+    
+    <style name="ContactStyle" parent="@style/TextAppearance.Condensed.Display2">
+        <item name="android:textColor">?attr/primaryColor</item>
+    </style>
+    
+    <style name="SummaryStyle" parent="@style/TextAppearance.Regular.Summary">
+        <item name="android:textColor">?attr/secondaryColor</item>
+    </style>
+    
+    <style name="AlertStyle" parent="@style/TextAppearance.Regular.Display1">
+        <item name="android:textColor">@color/red</item>
+    </style>
+    
+    <style name="DividerStyle" parent="@style/TextAppearance.Regular.Display1">
+        <item name="android:textColor">?attr/thirdColor</item>
+        <item name="android:paddingRight">@dimen/divider_padding_lr</item>
+        <item name="android:paddingLeft">@dimen/divider_padding_lr</item>
+    </style>
+    
+    <style name="AuthorStyle" parent="@style/TextAppearance.Regular.Display1">
+        <item name="android:textColor">?attr/secondaryColor</item>
+    </style>
+    
+    <style name="AssetStyle" parent="@style/TextAppearance.Regular.Display1">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">2dp</item>
+    </style>
+    
+    <style name="ListActionStyle" parent="@style/TextAppearance.Condensed.Bold.Display1">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/medium_blue</item>
+    </style>
+    
+    <style name="SnackBarText" parent="@style/TextAppearance.Condensed.Labels">
+        <item name="android:background">@color/red</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+        <item name="android:gravity">start|center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="SnackBarButton" parent="@style/TextAppearance.Condensed.Display2">
+        <item name="android:background">@color/red</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="JPMMGOEditViewStyle" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="bar">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:button">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    
+    
+    
+     <style name="MarketTableHeaderTextViewStyle" parent="@style/TextAppearance.Condensed.Bold.Header">
+        <item name="android:background">?attr/primaryColor</item>
+        <item name="android:textColor">?attr/secondaryColor</item>
+    </style>
+    
+      <style name="MarketTableTitleTextViewStyle" parent="@style/TextAppearance.Condensed.Bold.Title">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:background">?attr/primaryColor</item>
+        <item name="android:textColor">?attr/activeColor</item>
+    </style>
+    
+      <style name="MarketTableDataTextViewStyle" parent="@style/TextAppearance.Regular">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">match_parent</item>
+      	<item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:background">?attr/primaryColor</item>
+        <item name="android:textColor">?attr/secondaryColor</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+    
+     
+    
+
+    <style name="JPMMGOTextViewStyle_black" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="JPMMGOTextViewStyle_header" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:background">@color/typo_gray</item>
+    </style>
+
+    <style name="ActionButton" parent="@android:style/Widget.Button">
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textColor">@color/typo_white</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@drawable/roundbutton</item>
+    </style>
+
+    <style name="RangeButton" parent="ActionButton">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColorHint">@color/medium_blue</item>
+    </style>
+
+    <style name="ActionBarOverlay" parent="@style/Theme.AppCompat.Light">
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+    
+    <style name="DataPointListHeader" parent="@style/TextAppearance.Condensed.Regular.DataPointListHeader">
+        <item name="android:textColor">?attr/secondaryColor</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <style name="DataPointListElement" parent="@style/TextAppearance.Condensed.Bold.DataPointListValue">
+        <item name="android:textColor">?attr/secondaryColor</item>
+        <item name="android:paddingTop">8dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+      
+    </style>
+    
+    <style name="ContactInformation" parent="@style/TextAppearance.Regular.ContactInfo">
+        <item name="android:textColor">@color/medium_blue</item>
+    </style>
+    
+    <style name="FeedDetailTitle" parent="@style/TextAppearance.Regular.Bold">
+        <item name="android:textColor">?attr/activeColor</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/list_item_padding_top_bottom</item>
+    </style>
+    
+    <style name="FeedDetailCategory" parent="@style/TextAppearance.Regular.Display1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/medium_blue</item>
+    </style>
+    
+    <style name="FeedDetailTimeStamp" parent="@style/FeedDetailCategory">
+        <item name="android:textColor">?attr/secondaryColor</item>
+    </style>
+    
+    <style name="FeedDetailBody" parent="@style/TextAppearance.Regular.Summary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:textColor">?attr/secondaryColor</item>
+        <item name="android:lineSpacingExtra">8dp</item>
+    </style>
+    
+    <style name="CompanyAnalystFeedAndWatchlistText" parent="@style/TextAppearance.Condensed.Bold.Display1">
+        <item name="android:textColor">@color/medium_blue</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+    
+    <style name="CompanySubtitleStyle" parent="@style/TextAppearance.Regular.Display1">
+        <item name="android:textColor">?attr/secondaryColor</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    
+    <style name="CompanyTitleStyle" parent="@style/TextAppearance.Regular.List">
+        <item name="android:textColor">?attr/activeColor</item>
+        <item name="android:maxLines">1</item>
+    </style>
+        
+    <style name="LoadingProgress" parent="@style/TextAppearance.Condensed.Buttons">
+        <item name="android:textColor">@color/dark_gray</item>
+    </style>
+    
+   	<style name="CommonSubtitleAnalysyCompanyStyle" parent="@style/TextAppearance.Regular.Display1">
+        <item name="android:textColor">?attr/thirdColor</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    
+   	<style name="SummaryTextStyle" parent="@style/TextAppearance.Regular.Display1">
+        <item name="android:textColor">?attr/secondaryColor</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+   	<style name="CompanySubTitleTextStyle" parent="@style/TextAppearance.Regular.Display1">
+        <item name="android:textColor">?attr/secondaryColor</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:textStyle">bold</item>
+        
+    </style>
+    
+   	<style name="EmptyTitlesSections" parent="@style/TextAppearance.Condensed.Regular.Title">
+   	    <item name="android:textColor">?attr/activeColor</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/logo_padding_bottom</item>
+        <item name="android:layout_marginTop">@dimen/large_sticky_header</item>
+   	</style>
+   	
+   	<style name="EmptyTextBodySections" parent="@style/TextAppearance.Regular.Display1">
+   	    <item name="android:textColor">@color/typo_light_gray</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+   	</style>
+    
+
+</resources>

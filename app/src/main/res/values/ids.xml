@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="tag_type_view" type="id"/>
+    <item name="tag_row" type="id"/>
+    <item name="tag_column" type="id"/>
+	
+    <!-- Main menu ids -->
+    <item type="id" name="menu_my_feeds_id" />
+    <item type="id" name="menu_commentary_id" />
+    <item type="id" name="menu_my_watchlist_id" />
+    <item type="id" name="menu_briefcase_id" />
+    <item type="id" name="menu_calendar_id" />
+    <item type="id" name="menu_search_id" />
+    <item type="id" name="menu_rates_id" />
+    <item type="id" name="menu_credit_id" />
+    <item type="id" name="menu_h_credit_id" />
+    <item type="id" name="menu_emerging_markets_id" />
+    <item type="id" name="menu_securitized_products_id" />
+    <item type="id" name="menu_settings_id" />
+    <item type="id" name="menu_help_feedback_id" />
+    <item type="id" name="menu_terms_id" />
+    <item type="id" name="menu_disclaimers_id" />
+    <item type="id" name="menu_privacy_id" />
+    <item type="id" name="menu_cookie_id" />
+ 	<item type="id" name="menu_fx_id" />   
+    <item type="id" name="menu_prime_brokerage_id" />
+
+</resources>
