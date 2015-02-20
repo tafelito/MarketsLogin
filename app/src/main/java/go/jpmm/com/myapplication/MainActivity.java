@@ -1,51 +1,142 @@
 package go.jpmm.com.myapplication;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Rect;
+import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.ScaleAnimation;
+import android.view.animation.TranslateAnimation;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.nineoldandroids.view.ViewHelper;
+import com.nineoldandroids.view.ViewPropertyAnimator;
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
 
 
 public class MainActivity extends ActionBarActivity {
 
     private boolean pendingIntroAnimation;
     private ImageView loginLogo;
-    private ImageView loginBack;
+    private View loginBack;
+    private View loginOverlay;
     private ImageView loginBars;
     private EditText userEditTxt;
     private EditText passEditTxt;
     private LinearLayout mainLayout;
     private View loginControls;
+    private View helpControls;
+    private Button loginBtn;
+    private boolean keyboardUp;
+    private InputMethodManager mInputMethodManager;
+    private LinearLayout loginSetup;
+    private TextView needHelp;
+    private View userSeparator;
+    private View passSeparator;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+//        final ScaleAnimation scaleAnimation = new ScaleAnimation(1, 1, 1, 0.75f, Animation.RELATIVE_TO_SELF, 1f, Animation.RELATIVE_TO_SELF, 0.5f);
+//        final ScaleAnimation anim2 = new ScaleAnimation(1, 1, 0.75f, 1, Animation.RELATIVE_TO_SELF, 1f, Animation.RELATIVE_TO_SELF, 0.5f);
+
         mainLayout = (LinearLayout) findViewById(R.id.login_content);
+        mainLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+
+
+            private final int DefaultKeyboardDP = 100;
+
+            // From @nathanielwolf answer...  Lollipop includes button bar in the root. Add height of button bar (48dp) to maxDiff
+            private final int EstimatedKeyboardDP = DefaultKeyboardDP + (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? 48 : 0);
+
+            private final Rect r = new Rect();
+
+            @Override
+            public void onGlobalLayout() {
+                // Convert the dp to pixels.
+                int estimatedKeyboardHeight = (int) TypedValue
+                        .applyDimension(TypedValue.COMPLEX_UNIT_DIP, EstimatedKeyboardDP, getResources().getDisplayMetrics());
+
+
+                //r will be populated with the coordinates of your view that area still visible.
+                mainLayout.getWindowVisibleDisplayFrame(r);
+
+                // Conclude whether the keyboard is shown or not.
+                int heightDiff = mainLayout.getRootView().getHeight() - (r.bottom - r.top);
+                if (heightDiff >= estimatedKeyboardHeight) { // if more than 100 pixels, its probably a keyboard...
+                    /*ScaleAnimation scaleAnimation = new ScaleAnimation(1, 0.75f, 1, 0.75f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+                    scaleAnimation.cancel();
+                    scaleAnimation.setDuration(300);
+                    scaleAnimation.setFillAfter(true);
+                    loginBars.startAnimation(scaleAnimation);*/
+                    loginBars.setPivotX(100);
+                    loginBars.setPivotY(100);
+                    PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX", 1, 0.75f);
+                    PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY", 1, 0.75f);
+                    ObjectAnimator.ofPropertyValuesHolder(loginBars, scaleX, scaleY).setDuration(300).start();
+                    loginControls.setTranslationY(-(heightDiff/3));
+                } else {
+                    if (loginControls.getTranslationY()!=0) {
+                        loginBars.setPivotX(100);
+                        loginBars.setPivotY(100);
+                        PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX", 0.75f, 1);
+                        PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY", 0.75f, 1);
+                        ObjectAnimator.ofPropertyValuesHolder(loginBars, scaleX, scaleY).setDuration(300).start();
+                        /*ScaleAnimation scaleAnimation = new ScaleAnimation(0.75f, 1, 0.75f, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+                        scaleAnimation.setFillAfter(true);
+                        scaleAnimation.setDuration(300);
+                        loginBars.startAnimation(scaleAnimation);*/
+                        loginControls.setTranslationY(0f);
+
+                    }
+                }
+            }
+        });
+
+        mainLayout.requestFocus();
+
+        mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         loginControls = findViewById(R.id.login_controls);
+        helpControls = findViewById(R.id.login_help_controls);
+        loginSetup = (LinearLayout) findViewById(R.id.login_setup_task);
 
-        loginBack = (ImageView) findViewById(R.id.login_back);
+        loginBack = findViewById(R.id.login_back);
+
+        loginOverlay = findViewById(R.id.login_overlay);
 
         loginLogo = (ImageView) findViewById(R.id.login_logo);
         loginBars = (ImageView) findViewById(R.id.login_bars);
@@ -53,11 +144,101 @@ public class MainActivity extends ActionBarActivity {
         userEditTxt = (EditText) findViewById(R.id.login_user_name_editbox);
         passEditTxt = (EditText) findViewById(R.id.login_password_editbox);
 
-//        passEditTxt.setError("Error");
+        needHelp = (TextView) findViewById(R.id.login_help_text);
+        userSeparator = findViewById(R.id.login_separator_line);
+        passSeparator = findViewById(R.id.login_separator_line1);
+
+        loginBtn = (Button) findViewById(R.id.login_button);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AnimatorSet set = new AnimatorSet();
+                /*translate logo up*/
+                float loginLogoHeight = loginLogo.getHeight() + loginLogo.getPaddingBottom() + loginLogo.getPaddingTop();
+                ObjectAnimator translationY = ObjectAnimator.ofFloat(loginLogo, "translationY", 0f, -loginLogoHeight);
+                translationY.setDuration(500);
+                /*hide login controls*/
+                ObjectAnimator alpha = ObjectAnimator.ofFloat(loginControls, "alpha", 1f, 0f);
+                alpha.setDuration(500);
+
+                /*hide help controls*/
+                ObjectAnimator alphaHelp = ObjectAnimator.ofFloat(helpControls, "alpha", 1f, 0f);
+                alphaHelp.setDuration(500);
+
+                /*hide help controls*/
+                ObjectAnimator alphaLogin = ObjectAnimator.ofFloat(loginBtn, "alpha", 1f, 0f);
+                alphaLogin.setDuration(500);
+
+                /*scale login bars*/
+                loginBars.setPivotX(100);
+                loginBars.setPivotY(100);
+                PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX", 1, 1.25f);
+                PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY", 1, 1.25f);
+                ObjectAnimator scale = ObjectAnimator.ofPropertyValuesHolder(loginBars, scaleX, scaleY).setDuration(300);
+                set.playTogether(translationY, alpha, scale, alphaHelp, alphaLogin);
+                set.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        loginControls.setVisibility(View.GONE);
+                        loginSetup.setVisibility(View.VISIBLE);
+                        ScaleAnimation anim1 = new ScaleAnimation(1, 1, 1, 0, Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 1f);
+                        anim1.setRepeatCount(Animation.INFINITE);
+                        anim1.setRepeatMode(Animation.REVERSE);
+                        anim1.setInterpolator(new AccelerateDecelerateInterpolator());
+                        anim1.setDuration(300);
+                        loginBars.startAnimation(anim1);
+
+                        TextView task = (TextView) getLayoutInflater().inflate(R.layout.login_setup_text, null);
+                        task.setText("Authenticated");
+                        task.setAlpha(0f);
+                        loginSetup.addView(task);
+                        ObjectAnimator alpha = ObjectAnimator.ofFloat(task, "alpha", 0f, 1f);
+                        alpha.setDuration(500);
+                        alpha.setStartDelay(1000);
+                        alpha.start();
+
+                        task = (TextView) getLayoutInflater().inflate(R.layout.login_setup_text, null);
+                        task.setText("Setup feed configuration");
+                        task.setAlpha(0f);
+                        loginSetup.addView(task);
+                        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(task, "alpha", 0f, 1f);
+                        alpha1.setDuration(500);
+                        alpha1.setStartDelay(2000);
+                        alpha1.start();
+
+                        task = (TextView) getLayoutInflater().inflate(R.layout.login_setup_text, null);
+                        task.setText("Setup market monitors");
+                        task.setAlpha(0f);
+                        loginSetup.addView(task);
+                        ObjectAnimator alpha2 = ObjectAnimator.ofFloat(task, "alpha", 0f, 1f);
+                        alpha2.setDuration(500);
+                        alpha2.setStartDelay(3000);
+                        alpha2.start();
+
+                        task = (TextView) getLayoutInflater().inflate(R.layout.login_setup_text, null);
+                        task.setText("Loaded alerts");
+                        task.setAlpha(0f);
+                        loginSetup.addView(task);
+                        ObjectAnimator alpha3 = ObjectAnimator.ofFloat(task, "alpha", 0f, 1f);
+                        alpha3.setDuration(500);
+                        alpha3.setStartDelay(4000);
+                        alpha3.start();
+                    }
+                });
+                set.start();
+
+
+            }
+        });
 
         if (savedInstanceState==null){
             pendingIntroAnimation = true;
         }
+    }
+
+
+    public static float pxFromDp(final Context context, final float dp) {
+        return dp * context.getResources().getDisplayMetrics().density;
     }
 
 
@@ -74,27 +255,104 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void startIntroAnimation() {
+        //init all views in their start position
+//        float loginLogoHeight = loginLogo.getHeight() + loginLogo.getPaddingBottom() + loginLogo.getPaddingTop();
+//        loginLogo.setTranslationY(-loginLogoHeight);
+        int y = (mainLayout.getHeight() - loginControls.getMeasuredHeight()) + loginControls.getMeasuredHeight();
+        loginLogo.setAlpha(0f);
+        moveViewToScreenCenter(loginLogo);
+        userEditTxt.setTranslationY(loginControls.getHeight());
+        passEditTxt.setTranslationY(loginControls.getHeight());
+        needHelp.setTranslationY(loginControls.getHeight());
+        userSeparator.setTranslationY(loginControls.getHeight());
+        passSeparator.setTranslationY(loginControls.getHeight());
+        loginBars.setScaleY(0);
 
-        float loginLogoHeight = loginLogo.getHeight() + loginLogo.getPaddingBottom() + loginLogo.getPaddingTop();
-        ViewHelper.setTranslationY(loginLogo,-loginLogoHeight);
-        ViewHelper.setAlpha(loginControls, 0f);
+        AnimatorSet mainSet = new AnimatorSet();
+        AnimatorSet contentSet = new AnimatorSet();
+        final AnimatorSet loginControlsSet = new AnimatorSet();
 
-//        ViewHelper.setTranslationX(userEditTxt, -userEditTxt.getWidth());
+        ObjectAnimator alphaLogo = ObjectAnimator.ofFloat(loginLogo, "alpha", 0f, 1f);
+        alphaLogo.setDuration(1000);
+//        alphaLogo.start();
+        ObjectAnimator alpha = ObjectAnimator.ofFloat(loginOverlay, "alpha", 1f, 0f);
 
-        ObjectAnimator anim = ObjectAnimator.ofFloat(loginLogo, "translationY", -loginLogoHeight, 0f);
+        loginBack.setPivotX(loginBack.getWidth()/2);
+        loginBack.setPivotY(loginBack.getHeight()/2);
+        PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX", 2f, 1f);
+        PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY", 2f, 1f);
+        ObjectAnimator scale = ObjectAnimator.ofPropertyValuesHolder(loginBack, scaleX, scaleY);
+
+        ObjectAnimator transLogoY = ObjectAnimator.ofFloat(loginLogo, "translationY", 0);
+
+        ObjectAnimator transUserY = ObjectAnimator.ofFloat(userEditTxt, "translationY", 0);
+        ObjectAnimator transPassY = ObjectAnimator.ofFloat(passEditTxt, "translationY", 0);
+        ObjectAnimator transUserSeparatorY = ObjectAnimator.ofFloat(userSeparator, "translationY", 0);
+        ObjectAnimator transHelpY = ObjectAnimator.ofFloat(needHelp, "translationY", 0);
+        ObjectAnimator transPassSeparatorY = ObjectAnimator.ofFloat(passSeparator, "translationY", 0);
+
+        loginBars.setPivotY(loginBars.getHeight());
+        final ObjectAnimator scaleBarsY = ObjectAnimator.ofFloat(loginBars, "scaleY", 0f, 1f);
+        scaleBarsY.setInterpolator(new DecelerateInterpolator());
+        scaleBarsY.setStartDelay(1800);
+        scaleBarsY.start();
+
+        contentSet.playTogether(alpha, scale, transLogoY, transUserY, transPassY, transUserSeparatorY, transHelpY, transPassSeparatorY);
+        mainSet.playSequentially(alphaLogo, contentSet);
+//        loginControlsSet.setDuration(500);
+//        loginControlsSet.playTogether(transUserY, transPassY, transUserSeparatorY, transHelpY, transPassSeparatorY);
+       /* set1.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                scaleBarsY.setDuration(500);
+                scaleBarsY.setInterpolator(new AccelerateInterpolator());
+                scaleBarsY.start();
+            }
+        });*/
+
+        /*mainSet.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                loginControlsSet.start();
+            }
+        });*/
+//        set1.playSequentially(scaleBarsY);
+//        set.playSequentially(set1);
+//        mainSet.setStartDelay(1500);
+        mainSet.setDuration(1000);
+        mainSet.start();
+
+        /*ObjectAnimator anim = ObjectAnimator.ofFloat(loginLogo, "translationY", -loginLogoHeight, 0f);
         anim.setDuration(500)
                 .setStartDelay(1000);
         anim.start();
+
+        loginBars.setPivotX(100);
+        loginBars.setPivotY(100);
+        PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX", 0, 1);
+        PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY", 0, 1);
+        ObjectAnimator.ofPropertyValuesHolder(loginBars, scaleX, scaleY).setDuration(1000).start();
+
+        anim = ObjectAnimator.ofFloat(loginControls, "alpha", 0f, 1f);
+        anim.setDuration(1000)
+                .setStartDelay(1000);
+        anim.start();*/
+
+
+
+
+        /*ScaleAnimation anim1 = new ScaleAnimation(0, 1, 0, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        anim1.setInterpolator(new AccelerateDecelerateInterpolator());
+        anim1.setDuration(1000);
+        loginBars.startAnimation(anim1);*/
+
 
         /*anim = ObjectAnimator.ofFloat(userEditTxt, "translationX", -userEditTxt.getWidth(), 0f);
         anim.setDuration(300)
                 .setStartDelay(500);
         anim.start();*/
 
-        anim = ObjectAnimator.ofFloat(loginControls, "alpha", 0f, 1f);
-        anim.setDuration(1000)
-                .setStartDelay(1000);
-        anim.start();
+
 
         /*anim = ObjectAnimator.ofFloat(userEditTxt, "alpha", 0f, 1f);
         anim.setDuration(3000)
@@ -112,29 +370,43 @@ public class MainActivity extends ActionBarActivity {
         anim.start();*/
 
 //        ObjectAnimator scaleXIn = ObjectAnimator.ofFloat(loginBars, "scaleX", 0f, 1f);
-//        ObjectAnimator scaleYIn = ObjectAnimator.ofFloat(loginBars, "scaleY", 0f, 1f);
-//        scaleYIn.setRepeatCount(-1);
-//        scaleYIn.setRepeatMode(Animation.REVERSE);
-//        scaleYIn.setInterpolator(new LinearInterpolator());
-//        scaleYIn.setDuration(300)
-//                .setStartDelay(500);
-//        scaleYIn.start();
+        /*ViewHelper.setPivotX(loginBars,0.00000001f);
+        ViewHelper.setPivotY(loginBars,0.00000001f);
+        ObjectAnimator scaleYIn = ObjectAnimator.ofFloat(loginBars, "scaleY", 0f, 1f);
+        scaleYIn.setRepeatCount(Animation.INFINITE);
+        scaleYIn.setRepeatMode(Animation.REVERSE);
+        scaleYIn.setInterpolator(new LinearInterpolator());
+        scaleYIn.setDuration(300)
+                .setStartDelay(500);
+        scaleYIn.start();*/
 
-       /* PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("scaleX", 0f, 50f);
-        PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("scaleY", 0f, 50f);
-        ObjectAnimator.ofPropertyValuesHolder(loginBars, pvhX, pvhY).start();*/
+
+        /*up & down*/
+        /*ScaleAnimation anim1 = new ScaleAnimation(1, 1, 0, 1, Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 1f);
+        anim1.setRepeatCount(Animation.INFINITE);
+        anim1.setRepeatMode(Animation.REVERSE);
+        anim1.setInterpolator(new AccelerateDecelerateInterpolator());
+        anim1.setDuration(300);
+        loginBars.startAnimation(anim1);*/
+
+        /*ViewHelper.setPivotX(loginBack,50);
+        ViewHelper.setPivotY(loginBack,50);
+        ViewHelper.setScaleY(loginBack,1.5f);
+        ViewHelper.setScaleX(loginBack,1.5f);
+        ViewPropertyAnimator.animate(loginBack).scaleX(1).scaleY(1).setDuration(1000).start();*/
+
 
 //        ViewHelper.setScaleY(loginBars, 0f);
         /*Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.decelerate_interpolator);
         animation.setDuration(1000);
         loginBars.startAnimation(animation);*/
 
-        ScaleAnimation anim1 = new ScaleAnimation(1.5f, 1, 1.5f, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        anim1.setDuration(700);
-//        anim1.setStartOffset(300);
-//        anim1.setInterpolator(new DecelerateInterpolator());
-        anim1.setFillAfter(true);
-        loginBack.startAnimation(anim1);
+        /*ScaleAnimation anim2 = new ScaleAnimation(1.5f, 1, 1.5f, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        anim2.setDuration(700);
+        anim2.setStartOffset(200);
+        anim2.setInterpolator(new AccelerateInterpolator());
+        anim2.setFillAfter(true);
+        loginBack.startAnimation(anim2);*/
         /*ValueAnimator anim1 = ValueAnimator.ofFloat(0f, 1f);
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -176,6 +448,29 @@ public class MainActivity extends ActionBarActivity {
                 .setDuration(300)
                 .setStartDelay(700);*/
 
+    }
+
+
+    private void moveViewToScreenCenter( View view )
+    {
+        DisplayMetrics dm = new DisplayMetrics();
+        this.getWindowManager().getDefaultDisplay().getMetrics( dm );
+        int statusBarOffset = dm.heightPixels - mainLayout.getMeasuredHeight();
+
+        int originalPos[] = new int[2];
+        view.getLocationOnScreen( originalPos );
+
+        int xDest = dm.widthPixels/2;
+        xDest -= (view.getMeasuredWidth()/2);
+        int yDest = dm.heightPixels/2 - (view.getMeasuredHeight()/2) - statusBarOffset;
+
+        view.setTranslationX(xDest - originalPos[0]);
+        view.setTranslationY(yDest - originalPos[1]);
+
+        /*TranslateAnimation anim = new TranslateAnimation( 0, xDest - originalPos[0] , 0, yDest - originalPos[1] );
+        anim.setDuration(1000);
+        anim.setFillAfter( true );
+        view.startAnimation(anim);*/
     }
 
     @Override

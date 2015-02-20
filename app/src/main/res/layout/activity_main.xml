@@ -1,12 +1,26 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
 
-    <ImageView
+    <!--<ImageView-->
+        <!--android:id="@+id/login_back"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/login_back" />-->
+
+    <View
         android:id="@+id/login_back"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/login_back" />
+        android:background="@drawable/login_portrait_bg"/>
+
+    <View
+        android:id="@+id/login_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
 
 
     <LinearLayout
@@ -15,6 +29,7 @@
         android:layout_height="match_parent"
         android:focusable="true"
         android:focusableInTouchMode="true"
+        android:animateLayoutChanges="true"
         android:orientation="vertical">
 
         <android.support.v7.widget.Toolbar
@@ -45,7 +60,60 @@
             android:paddingLeft="@dimen/list_item_padding"
             android:paddingRight="@dimen/list_item_padding"
             android:scaleType="matrix"
-            android:src="@drawable/login_jpmm_bars" />
+            android:src="@drawable/login_jpmm_bars"/>
+
+        <LinearLayout
+            android:id="@+id/login_setup_task"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="48dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/list_item_padding"
+            android:paddingRight="@dimen/list_item_padding"
+            android:visibility="gone">
+
+
+            <!--<TextView-->
+                <!--android:id="@+id/authenticate_setup"-->
+                <!--style="@style/LoginInputTextStyle"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Authenticated"-->
+                <!--android:gravity="left|center"-->
+                <!--android:drawableLeft="@drawable/abc_btn_check_to_on_mtrl_015"/>-->
+
+
+            <!--<TextView-->
+                <!--android:id="@+id/feed_setup"-->
+                <!--style="@style/LoginInputTextStyle"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="left|center"-->
+                <!--android:drawableLeft="@drawable/abc_btn_check_to_on_mtrl_015"-->
+                <!--android:text="Setup feed configuration" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/markets_setup"-->
+                <!--style="@style/LoginInputTextStyle"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Setup market monitors"-->
+                <!--android:gravity="left|center"-->
+                <!--android:drawableLeft="@drawable/abc_btn_check_to_on_mtrl_015"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/alert_setup"-->
+                <!--style="@style/LoginInputTextStyle"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Loaded alerts"-->
+                <!--android:gravity="left|center"-->
+                <!--android:drawableLeft="@drawable/abc_btn_check_to_on_mtrl_015"/>-->
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/login_controls"
@@ -81,7 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/login_password_txt"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"/>
 
             <View
                 android:id="@+id/login_separator_line1"
@@ -112,6 +180,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/login_help_controls"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -120,7 +189,8 @@
             android:orientation="horizontal"
             android:paddingLeft="@dimen/list_item_padding"
             android:paddingRight="@dimen/list_item_padding"
-            android:weightSum="3">
+            android:weightSum="3"
+            android:visibility="invisible">
 
             <TextView
                 android:id="@+id/login_privacy_text"
@@ -156,7 +226,9 @@
             android:id="@+id/login_button"
             style="@style/ButtonStyle"
             android:gravity="center"
-            android:text="@string/login_log_in_txt" />
+            android:text="@string/login_log_in_txt"
+            android:visibility="invisible"/>
 
     </LinearLayout>
+
 </FrameLayout>
